@@ -22,6 +22,48 @@
 				
 				$SESSION['login_user']= $userName;
 				$SESSION['password']= $password;
+
+				$hostname = "localhost";
+				$dbusername = "task_user_1";
+				$dbpassword = "123";
+				$dbname = "task";
+
+				// Mysqli Object-Oriented
+				echo "Mysqli Object-Oriented";
+				echo "<br>";
+				$conn1 = new mysqli($hostname, $dbusername, $dbpassword, $dbname);
+
+				if($conn1->connect_errno) {
+					echo "Database Connection Failed!...";
+					echo "<br>";
+					echo $conn1->connect_error;
+				}
+				else{
+					echo "Database Connection Successful!  ";
+					echo "<br>";
+
+
+					$stmt = $conn1->prepare("select username, password from user where username = ? and password = ?");
+					$stmt->bind_param("ss", $userName , $password);
+					$stmt->execute();
+					$res2 = $stmt->get_result();
+					$user = $res2->fetch_assoc();
+
+					if(isset($user)){
+						echo "<br>";
+						echo "Login Successful";
+						echo "<br>";
+						echo "username: " . $user['username'];
+						echo "<br>";
+						echo "password: " . $user['password'];
+						echo "<br>";
+						echo "<br>";
+
+					}
+					
+					}
+					$conn1->close();
+				
 				
 				/*
 				$f = fopen("data.txt", "r");

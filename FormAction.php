@@ -38,7 +38,7 @@
 				$conn1 = new mysqli($hostname, $dbusername, $dbpassword, $dbname);
 
 				if($conn1->connect_errno) {
-				echo "1. Database Connection Failed!...";
+				echo "Database Connection Failed!...";
 				echo "<br>";
 				echo $conn1->connect_error;
 				}
@@ -62,7 +62,7 @@
 				}
 
 				$conn1->close();
-			}
+				}
 
 				
 				$f1 = fopen("data.txt", "w");
