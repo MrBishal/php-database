@@ -43,15 +43,16 @@
 				echo $conn1->connect_error;
 				}
 				else {
-				echo "1. Database Connection Successful!";
+				echo "Database Connection Successful!  ";
+				echo "<br>";
 
 				$stmt1 = $conn1->prepare("insert into user (firstname, lastname, gender, email, username, password, recoveryemail) values (?, ?, ?, ?, ?, ?, ?)");
 				$stmt1->bind_param("sssssss", $firstName, $lastName, $gender, $email, $userName, $password, $recoveryEmail);
-				$p1 = "mno";
-				$p2 = "789";
+
 				$status = $stmt1->execute();
 				if($status) {
 				echo "Data Insert Successful!";
+				echo "<br>";
 				}
 				else {
 				echo "Failed to Insert Data.";
@@ -63,7 +64,7 @@
 				$conn1->close();
 			}
 
-				/*
+				
 				$f1 = fopen("data.txt", "w");
 				fwrite($f1, $json_encoded_1 . "\n");
 				fclose($f1);
@@ -72,7 +73,7 @@
 				$read = fread($f2, filesize("data.txt"));
 
 				$json_decode = json_decode($read, true);
-				*/
+				
 
 				echo $json_decode['firstName'];
 				echo "<br>";

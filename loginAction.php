@@ -23,6 +23,7 @@
 				$SESSION['login_user']= $userName;
 				$SESSION['password']= $password;
 				
+				/*
 				$f = fopen("data.txt", "r");
 				
 				$data = fread($f, filesize("data.txt"));
@@ -48,7 +49,7 @@
 				{
 					echo "Login Failed";
 				}
-				 
+				*/
 			}
 		}
 	?>
