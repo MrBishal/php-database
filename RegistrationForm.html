@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+</head>
+<body>
+
+	<h1>Registration Form</h1>
+
+	<form action="FormAction.php" method="POST">
+		<fieldset>
+		<legend>Basic Information:</legend>
+
+		<label for="firstName">First Name:</label>
+		<input type="text" id="firstName" name="fname">
+
+		<br>
+		
+		<label for="lastName">Last Name: </label>
+		<input type="text" id="lastName" name="lname">
+
+		<br>
+
+		<label for="Gender">Gender: </label>
+		<input type="radio" id="Gender" name="gender" value="male">
+		<label for="male">Male</label>
+		<input type="radio" id="Gender" name="gender" value="female">
+		<label for="female">Female</label>
+
+		<br>
+		
+		<label for="Email">Email: </label>
+		<input type="email" id="email" name="email">
+
+		<br>
+		
+		
+		</fieldset>
+		
+		<fieldset>
+		<legend>User Account Information:</legend>
+
+		<label for="userName">User Name:</label>
+		<input type="text" id="userName" name="uname">
+
+		<br>
+		
+
+		<label for="Password">Password: </label>
+		<input type="password" id="Password" name="pword">
+
+		<br>
+		
+		<label for="recoveryEmail">Recovery Email: </label>
+		<input type="email" id="remail" name="remail">
+
+		<br>
+		
+		
+		</fieldset>
+
+		<input type="submit" value="Submit">
+
+	</form>
+
+</body>
+</html>
